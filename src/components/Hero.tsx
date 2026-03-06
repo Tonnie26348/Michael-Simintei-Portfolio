@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="absolute top-20 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-1/4 w-60 h-60 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
         {/* Text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -56,7 +56,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display text-foreground leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-foreground leading-tight mb-4">
             Michael{" "}
             <span className="text-gradient">Simintei</span>
           </h1>
@@ -75,13 +75,13 @@ const Hero = () => {
             </motion.p>
           </div>
 
-          <p className="text-base text-muted-foreground max-w-lg mb-8 leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mb-6 md:mb-8 leading-relaxed">
             Delivering precision mapping solutions through advanced surveying
             techniques, GNSS operations, and aerial drone technology across
             Kenya.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-8 md:mb-10">
             <a
               href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity shadow-md"
@@ -108,14 +108,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex items-center gap-8"
+            className="flex items-center gap-6 sm:gap-8"
           >
             {stats.map((s, i) => (
               <div key={i} className="text-center">
-                <p className="text-2xl md:text-3xl font-display font-bold text-primary">
+                <p className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-primary">
                   {s.value}
                 </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
+                <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
                   {s.label}
                 </p>
               </div>
@@ -123,14 +123,14 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image */}
+        {/* Image - visible on mobile too */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative hidden md:block"
+          className="relative order-first md:order-last"
         >
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] max-h-[600px] border border-border/50">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] sm:aspect-[3/4] max-h-[350px] sm:max-h-[500px] md:max-h-[600px] border border-border/50">
             <img
               src={surveyImg}
               alt="Michael Simintei conducting land survey in the field"
@@ -144,7 +144,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 }}
-            className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl p-4 shadow-lg backdrop-blur-sm"
+            className="absolute -bottom-3 left-2 sm:-bottom-4 sm:-left-4 bg-card border border-border rounded-xl p-3 sm:p-4 shadow-lg backdrop-blur-sm"
           >
             <div className="flex items-center gap-2">
               <MapPin size={14} className="text-primary" />
@@ -156,7 +156,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9 }}
-            className="absolute -top-4 -right-4 bg-card border border-border rounded-xl p-4 shadow-lg backdrop-blur-sm"
+            className="absolute -top-3 right-2 sm:-top-4 sm:-right-4 bg-card border border-border rounded-xl p-3 sm:p-4 shadow-lg backdrop-blur-sm"
           >
             <div className="flex items-center gap-2">
               <Phone size={14} className="text-primary" />
@@ -172,7 +172,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
       >
         <span className="text-xs tracking-wider uppercase">Scroll</span>
         <motion.div

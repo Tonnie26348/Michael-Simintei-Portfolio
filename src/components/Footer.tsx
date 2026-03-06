@@ -5,8 +5,8 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid sm:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-6 py-10 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
           <div>
             <p className="font-display text-xl text-foreground mb-2">
               Michael<span className="text-primary">.</span>
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t border-border pt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-6">
           <p className="text-xs text-muted-foreground flex items-center gap-1">
             © {new Date().getFullYear()} Michael Simintei. Made with{" "}
             <Heart size={10} className="text-primary fill-primary" /> in Kenya.
