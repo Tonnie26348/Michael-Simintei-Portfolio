@@ -1,6 +1,6 @@
+import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Award, Shield, Compass } from "lucide-react";
-import { useRef } from "react";
 import droneImg from "@/assets/drone-pilot.jpg";
 
 const highlights = [
