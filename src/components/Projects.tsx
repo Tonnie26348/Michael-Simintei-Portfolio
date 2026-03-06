@@ -49,7 +49,6 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="section-padding bg-card relative overflow-hidden">
-      {/* Decorative element */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
@@ -57,12 +56,12 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
             Portfolio
           </p>
-          <h2 className="text-3xl md:text-4xl font-display text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display text-foreground">
             Featured Projects
           </h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto text-sm">
@@ -71,7 +70,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((p, i) => (
             <motion.div
               key={i}
@@ -79,9 +78,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-background border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group relative"
+              className="bg-background border border-border rounded-xl p-5 sm:p-6 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group relative"
             >
-              {/* Project number */}
               <span className="absolute top-4 right-4 text-[11px] font-bold text-muted-foreground/30 font-display">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -105,7 +103,7 @@ const Projects = () => {
               <p className="text-[11px] text-muted-foreground font-medium mb-3 bg-accent/50 inline-block px-2 py-0.5 rounded-full">
                 {p.scale}
               </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {p.desc}
               </p>
             </motion.div>

@@ -33,6 +33,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -41,13 +60,13 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
         <a href="#" className="font-display text-xl text-foreground">
           Michael<span className="text-primary">.</span>
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -87,7 +106,7 @@ const Navbar = () => {
           <ThemeToggle />
           <button
             onClick={() => setOpen(!open)}
-            className="text-foreground"
+            className="text-foreground p-1"
             aria-label="Toggle menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
@@ -104,13 +123,13 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             className="md:hidden overflow-hidden bg-background border-b border-border"
           >
-            <ul className="flex flex-col px-6 pb-6 gap-4">
+            <ul className="flex flex-col px-4 sm:px-6 pb-6 gap-4">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className={`text-sm font-medium transition-colors ${
+                    className={`text-sm font-medium transition-colors block py-1 ${
                       active === l.href.slice(1)
                         ? "text-primary"
                         : "text-muted-foreground hover:text-primary"

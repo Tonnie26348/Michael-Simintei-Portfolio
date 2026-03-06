@@ -28,10 +28,7 @@ const contactMethods = [
 const Contact = () => {
   return (
     <section id="contact" className="section-padding bg-card relative overflow-hidden">
-      {/* Top divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-
-      {/* Background accent */}
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
@@ -43,10 +40,10 @@ const Contact = () => {
           <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
             Let's Connect
           </p>
-          <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display text-foreground mb-4">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground mb-10 max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-lg mx-auto">
             Looking for a skilled Land Surveyor or Drone Pilot? I'd love to hear
             about your project. Reach out through any channel below.
           </p>
@@ -57,7 +54,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="grid sm:grid-cols-3 gap-4 mb-8"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
         >
           {contactMethods.map((c, i) => (
             <a
@@ -65,11 +62,11 @@ const Contact = () => {
               href={c.href}
               target={c.href.startsWith("http") ? "_blank" : undefined}
               rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="bg-background border border-border rounded-xl p-6 hover:border-primary/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-background border border-border rounded-xl p-5 sm:p-6 hover:border-primary/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors duration-300">
                 <c.icon
-                  size={20}
+                  size={18}
                   className="text-accent-foreground group-hover:text-primary-foreground transition-colors duration-300"
                 />
               </div>
@@ -84,7 +81,6 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,9 +101,9 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="flex items-center justify-center gap-2 text-sm text-muted-foreground"
+          className="flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground"
         >
-          <MapPin size={14} className="text-primary" />
+          <MapPin size={14} className="text-primary shrink-0" />
           <span>Based in Kenya — available for projects nationwide</span>
         </motion.div>
       </div>
