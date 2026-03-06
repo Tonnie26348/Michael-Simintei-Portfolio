@@ -48,11 +48,11 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="relative mx-auto md:mx-0 max-w-[400px] md:max-w-none"
         >
-          <div className="rounded-2xl overflow-hidden shadow-xl aspect-square sm:aspect-[4/5] border border-border/50">
+          <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] h-[450px] sm:h-[550px] border border-border/50">
             <img
               src={droneImg}
               alt="Michael with drone equipment preparing for aerial mapping"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               loading="lazy"
             />
           </div>
