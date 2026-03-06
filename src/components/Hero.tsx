@@ -130,14 +130,14 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative order-first md:order-last"
         >
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] sm:aspect-[3/4] max-h-[350px] sm:max-h-[500px] md:max-h-[600px] border border-border/50 bg-muted/30">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-square sm:aspect-[3/4] md:h-[600px] border border-border/50">
             <img
               src={surveyImg}
               alt="Michael Simintei conducting land survey in the field"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           </div>
 
           <motion.div
